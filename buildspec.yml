@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install
+  pre-build:
+    commands:
+      - sed -i 's/_BaCKEND_IP_/$Backend_ip/g' src/const/node-server-config.js
+      - sed -i 's/_BUCKET_ADDRESS_/$Bucket_address/g' aws-config.json
+  build:
+    commands:
+      - npm run build
+artifacts:
+  files:
+    - 'build/*'
