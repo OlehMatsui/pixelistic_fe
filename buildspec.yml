@@ -6,8 +6,8 @@ phases:
       - npm install
   pre_build:
     commands:
-      - sed -i "s|_BACKEND_IP_|${Backend_ip}|g" src/const/node-server-config.js
-      - sed -i "s|_BUCKET_ADDRESS_|${Bucket_address}|g" src/const/node-server-config.js
+      - sed -i "s|_BACKEND_IP_|$Backend_ip|g" src/const/node-server-config.js
+      - sed -i "s|_BUCKET_ADDRESS_|$Bucket_address|g" src/const/node-server-config.js
   build:
     commands:
       - npm run build
